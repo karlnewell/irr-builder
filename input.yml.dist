@@ -35,7 +35,7 @@
         - MY IPv6
         - Multi-line description
 
-    - route: 162.250.136.0/22
+    - route: 192.168.1.0/22
       descr: 
         - MY IPv4
       
