@@ -1,0 +1,59 @@
+mntner:  {{ mntner }}
+descr:   {{ descr }}
+admin_c: {{ admin_c }}
+tech_c:  {{ tech_c }}
+upd_to:  {{ upd_to }}
+mnt_nfy: {{ mnt_nfy }}
+auth:    {{ auth }}
+remarks: {{ remarks }}
+mnt_by:  {{ mnt_by }}
+referral_by: {{ referral_by }}
+changed: {{ changed }}
+source:  {{ source }}
+
+aut_num: {{ aut_num }}
+as_name: {{ as_name }}
+{%- for d in aut_num_descr %}
+descr:   {{ d }}
+{%- endfor %}
+export:  {{ export }}
+admin_c: {{ admin_c }}
+tech_c:  {{ admin_c }}
+mnt_by:  {{ mnt_by }}
+password: {{ password }}
+changed: {{ changed }}
+notify:  {{ notify }}
+source:  {{ source }}
+
+{% for r in route_list %}
+{%- if r.route6 %}
+route6:  {{ r.route6 }}
+{%- endif %}
+{%- if r.route %}
+route:   {{ r.route }}
+{%- endif %}
+{%- for d in r.descr %}
+descr:   {{ d }}
+{%- endfor %}
+origin:  {{ origin }}
+mnt_by:  {{ mnt_by }}
+password: {{ password }}
+changed: {{ changed }}
+notify:  {{ notify }}
+source:  {{ source }}
+{% endfor %}
+
+{% for a in as_set_list %}
+as_set:  {{ a.as_set }}
+{%- for d in a.descr %}
+descr:   {{ d }}
+{%- endfor %}
+members: {% for member in a.members %}{{ member }}{{ ', ' if not loop.last }}{% endfor %}
+admin_c: {{ admin_c }}
+tech_c:  {{ admin_c }}
+mnt_by:  {{ mnt_by }}
+password: {{ password }}
+changed: {{ changed }}
+notify:  {{ notify }}
+source:  {{ source }}
+{% endfor %}

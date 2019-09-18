@@ -1,0 +1,67 @@
+---
+  mntner: MNT-MY-1
+  descr: Mntr Description
+  admin_c: ME3-ARIN
+  tech_c: ME3-ARIN
+  upd_to: me@example.edu
+  mnt_nfy: me@example.edu
+  auth: 
+  remarks: Mntr remarks
+  mnt_by: MNT-MY-1
+  referral_by: MNT-MY-1
+  changed: me@example.edu
+  source: ARIN
+  origin: AS65000
+
+  aut_num: AS65000
+  as_name: MYAS
+  aut_num_descr:   
+    - Multiline
+    - aut_num description
+  export:  to AS-ANY announce AS-MYAS
+  password: 
+  notify:  me@example.edu
+
+  route_list:
+    - route6: FACE:B00C::/44
+      descr: 
+        - MY IPv6
+        - 123 Main St
+        - Washington, DC
+        - US
+      
+    - route6: DEAD:BEEF::/44
+      descr: 
+        - MY IPv6
+        - Multi-line description
+
+    - route: 162.250.136.0/22
+      descr: 
+        - MY IPv4
+      
+    - route: 10.11.38.0/22
+      descr: 
+        - Single line description
+      
+  as_set_list:
+    - as_set: AS-MYAS
+      descr: 
+        - MY backbone + customers
+      members: 
+        - AS-MYAS-BACKBONE
+        - AS-MYAS-CUSTOMERS
+
+    - as_set: AS-MYAS-BACKBONE
+      descr: 
+        - MY backbone
+      members: 
+        - AS65001
+
+    - as_set: AS-MYAS-CUSTOMERS
+      descr: 
+        - MY customers
+      members: 
+        - AS65002
+        - AS65003
+        - AS65004
+        - AS65005
