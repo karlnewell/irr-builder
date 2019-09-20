@@ -1,4 +1,8 @@
 ---
+  # Must maintain proper indentation
+
+  # Typical maintainer fields
+  # Also contains fields commonly used in other records
   mntner: MNT-MY-1
   descr: Mntr Description
   admin_c: ME3-ARIN
@@ -13,6 +17,7 @@
   source: ARIN
   origin: AS65000
 
+  # Typical aut-num fields
   aut_num: AS65000
   as_name: MYAS
   aut_num_descr:   
@@ -22,6 +27,9 @@
   password: 
   notify:  me@example.edu
 
+  # This list describes your route(6)s
+  # One list item per route(6)
+  # Each item can contain a descr that is itself a list
   route_list:
     - route6: FACE:B00C::/44
       descr: 
@@ -43,6 +51,10 @@
       descr: 
         - Single line description
       
+  # This list describes your as-sets
+  # One list item per as-set
+  # Each item can contain a descr that is itself a list
+  # Each item should contain a members list
   as_set_list:
     - as_set: AS-MYAS
       descr: 
